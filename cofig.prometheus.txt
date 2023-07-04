@@ -1,0 +1,23 @@
+Coie o link do site do prometheus e baixeo repositório
+wget https://github.com/prometheus/prometheus/releases/download/v2.45.0/prometheus-2.45.0.linux-amd64.tar.gz
+
+em seguida desconpacte o arquivo com o comando
+tar -xvf prometheus-2.45.0.linux-amd64.tar.gz
+
+Apos extrair o arquivo baixado do prometheus execute ./prometheus 
+
+Copie o diretorio cp -r . /usr/local/bin/prometheus
+
+e criar o arquivo de configuração nano /etc/systemctl/system/prometheus.service
+
+no arquivo adicione o texto abaixo
+[Unit]
+Description=Prometheus Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/prometheus/prometheus --config.file=/usr/local/bin/prometheus/prometheus.yml
+
+[Install]
+WantedBy=multi-user.target
