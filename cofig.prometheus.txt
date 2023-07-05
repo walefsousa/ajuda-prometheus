@@ -6,9 +6,9 @@ tar -xvf prometheus-2.45.0.linux-amd64.tar.gz
 
 Apos extrair o arquivo baixado do prometheus execute ./prometheus 
 
-Copie o diretorio cp -r . /usr/local/bin/prometheus
+Copie o diretorio cp -r . /usr/local/bin
 
-e criar o arquivo de configuração nano /etc/systemctl/system/prometheus.service
+e criar o arquivo de configuração nano /etc/systemd/system/prometheus.service
 
 no arquivo adicione o texto abaixo
 [Unit]
